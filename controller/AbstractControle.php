@@ -22,7 +22,7 @@ class controle{
             return false;
         }
     }
-
+    
 
     /**
      * Metodo que busca objectos

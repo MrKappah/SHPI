@@ -10,23 +10,24 @@ class c_alocacao
     public function salvar()
     {
 
-        $nome = addcslashes($_REQUEST['nome']);
-        $email = addcslashes($_REQUEST['email']);
-        $login = addcslashes($_REQUEST['login']);
-        $senha = addcslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addcslashes($_REQUEST['nivel_acesso_id']);
+        $data_aloc = addcslashes($_REQUEST['data_aloc']);
+        $hora = addcslashes($_REQUEST['hora']);
+        $usuarios_idUser = addcslashes($_REQUEST['usuarios_idUser']);
+        $desc_recurso_alocado = addcslashes($_REQUEST['desc_recurso_alocado']);
 
-        $array = array($nome, $email, $login, $senha, $nivel_acesso_id);
+        $array = array($data_aloc,$hora, $usuarios_idUser, $desc_recurso_alocado);
+        $sql = "INSERT INTO alocacao (data_aloc,hora,usuarios_idUser,desc_recurso_alocado) values (?,?,?,?)";
+        $controle = new controle();
+        $con = $controle->salvar($sql);
+        return $con;
 
-        $sql = "INSERT INTO alocacao (data,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
-
-      //INSERT INTO `alocacao` (`idAlocacao`, `data`, `hora`, `usuarios_idUser`, `desc_recurso_alocado`) VALUES ('1', '2018-05-01', '2018-05-08 00:00:00', '1', '1');
+      //INSERT INTO `alocacao` (`idAlocacao`, `data_aloc`, `hora`, `usuarios_idUser`, `desc_recurso_alocado`) VALUES ('1', '2018-05-01', '2018-05-08 00:00:00', '1', 'yes yes yes');
 
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from usuarios";
+        $sql = "SELECT * from alocacao";
         $controle = new controle();
         $con = $controle->buscar($sql);
         return $con;
@@ -37,7 +38,7 @@ class c_alocacao
     {
         $id = addcslashes($_REQUEST['id']);
 
-        $sql = "DELETE FROM usuarios where idUser=$id";
+        $sql = "DELETE FROM alocacao where idAlocacao=$id";
         $controle = new controle();
         $con = $controle->eliminar($sql);
         return $con;
@@ -45,14 +46,13 @@ class c_alocacao
 
     public function actualizar()
     {
-        $id = addcslashes($_REQUEST['id']);
-        $nome = addslashes($_REQUEST['nome']);
-        $email = addslashes($_REQUEST['email']);
-        $login = addslashes($_REQUEST['login']);
-        $senha = addslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addslashes($_REQUEST['nivel_acesso_id']);
+        $id = addcslashes($_REQUEST['idAlocacao']);
+        $data_aloc = addslashes($_REQUEST['data_aloc']);
+        $hora = addslashes($_REQUEST['hora']);
+        $usuarios_idUser = addslashes($_REQUEST['usuarios_idUser']);
+        $desc_recurso_alocado = addslashes($_REQUEST['desc_recurso_alocado']);
 
-        $sql = "UPDATE usuarios SET nome=$nome,email=$email,login=$login,senha=$senha,nivel_acesso_id=$nivel_acesso_id WHERE idUser=$id";
+        $sql = "UPDATE usuarios SET data_aloc=$data_aloc,hora=$hora,usuarios_idUser=$usuarios_idUser,desc_recurso_alocado=$desc_recurso_alocado WHERE idAlocacao=$id";
         $controle = new controle();
         $con = $controle->actualizar($sql);
         return $con;

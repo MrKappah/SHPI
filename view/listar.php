@@ -1,5 +1,5 @@
 <?php
-include 'c_usuarios.php';
+include '../controller/c_usuarios.php';
 ?>
 
 <table border="1">
@@ -9,7 +9,7 @@ include 'c_usuarios.php';
 
     <?php
 
-    $msg= new controller_publicacao();
+    $msg= new c_usuarios();
   $sk= $msg->buscar();
     foreach ($sk as $linha):
         

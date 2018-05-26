@@ -10,23 +10,28 @@ class c_contacto
     public function salvar()
     {
 
-        $nome = addcslashes($_REQUEST['nome']);
-        $email = addcslashes($_REQUEST['email']);
-        $login = addcslashes($_REQUEST['login']);
-        $senha = addcslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addcslashes($_REQUEST['nivel_acesso_id']);
+        $Email = addcslashes($_REQUEST['Email']);
+        $Telefone = addcslashes($_REQUEST['Telefone']);
+        $Celular = addcslashes($_REQUEST['Celular']);
+        $usuarios_idUser = addcslashes($_REQUEST['usuarios_idUser']);
+        $departamento_iddepartamento = addcslashes($_REQUEST['departamento_iddepartamento']);
 
-        $array = array($nome, $email, $login, $senha, $nivel_acesso_id);
 
-        $sql = "INSERT INTO usuarios (nome,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
+//INSERT INTO `contacto` (`idContacto`, `Email`, `Telefone`, `Celular`, `usuarios_idUser`, `departamento_iddepartamento`) VALUES ('1', 'info.shpi@shpi.co.mz', '826215197', '840302176', '1', '1'), ('2', 'comercial@shpi.co.mz', '840302176', '826215197', '1', '2');
+        $array = array($Email, $Telefone, $Celular, $usuarios_idUser,$departamento_iddepartamento);
 
-        //(`idUser`, `nome`, `email`, `login`, `senha`, `nivel_acesso_id`, `created`, `modified`, `usuarios_idUser`, `departamento_iddepartamento`) VALUES ('3', 'fg', 'dfg', 'dfg', 'dfg', '1', '2018-05-15', '2018-05-22', '1', '1');
+        $sql = "INSERT INTO contacto (Email,Telefone,Celular,usuarios_idUser,departamento_iddepartamento) values (?,?,?,?,?,?)";
+        $controle = new controle();
+        $con = $controle->buscar($sql);
+        return $con;
+
+
 
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from usuarios";
+        $sql = "SELECT * from contacto";
         $controle = new controle();
         $con = $controle->buscar($sql);
         return $con;
@@ -37,7 +42,7 @@ class c_contacto
     {
         $id = addcslashes($_REQUEST['id']);
 
-        $sql = "DELETE FROM usuarios where idUser=$id";
+        $sql = "DELETE FROM contacto where idUser=$id";
         $controle = new controle();
         $con = $controle->eliminar($sql);
         return $con;
@@ -45,14 +50,16 @@ class c_contacto
 
     public function actualizar()
     {
-        $id = addcslashes($_REQUEST['id']);
-        $nome = addslashes($_REQUEST['nome']);
-        $email = addslashes($_REQUEST['email']);
-        $login = addslashes($_REQUEST['login']);
-        $senha = addslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addslashes($_REQUEST['nivel_acesso_id']);
+        $id = addcslashes($_REQUEST['idContacto']);
+        $Email = addslashes($_REQUEST['Email']);
+        $Telefone = addslashes($_REQUEST['Telefone']);
+        $Celular = addslashes($_REQUEST['Celular']);
+        $usuarios_idUser = addslashes($_REQUEST['senha']);
+        $departamento_iddepartamento = addslashes($_REQUEST['nivel_acesso_id']);
 
-        $sql = "UPDATE usuarios SET nome=$nome,email=$email,login=$login,senha=$senha,nivel_acesso_id=$nivel_acesso_id WHERE idUser=$id";
+        
+//INSERT INTO `contacto` (`idContacto`, `Email`, `Telefone`, `Celular`, `usuarios_idUser`, `departamento_iddepartamento`) VALUES ('1', 'info.shpi@shpi.co.mz', '826215197', '840302176', '1', '1'), ('2', 'comercial@shpi.co.mz', '840302176', '826215197', '1', '2');
+        $sql = "UPDATE contacto SET Email=$Email,Telefone=$Telefone,Celular=$Celular,usuarios_idUser=$usuarios_idUser,departamento_iddepartamento=$departamento_iddepartamento WHERE idUser=$id";
         $controle = new controle();
         $con = $controle->actualizar($sql);
         return $con;

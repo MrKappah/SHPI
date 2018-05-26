@@ -19,7 +19,9 @@ class c_usuarios
         $array = array($nome, $email, $login, $senha, $nivel_acesso_id);
 
         $sql = "INSERT INTO usuarios (nome,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
-
+        $controle = new controle();
+        $con = $controle->salvar($array,$sql);
+        return $con;
         //(`idUser`, `nome`, `email`, `login`, `senha`, `nivel_acesso_id`, `created`, `modified`, `usuarios_idUser`, `departamento_iddepartamento`) VALUES ('3', 'fg', 'dfg', 'dfg', 'dfg', '1', '2018-05-15', '2018-05-22', '1', '1');
 
     }
