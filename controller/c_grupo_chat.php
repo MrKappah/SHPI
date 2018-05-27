@@ -18,7 +18,7 @@ class c_grupo_chat
 
         $array = array($nome_do_grupo, $data_criacao, $nr_integrantes, $susuarios_idUser, $comentario_idcomentario);
 //INSERT INTO `grupo_chat` (`idgrupo_chat`, `nome_do_grupo`, `data_criacao`, `nr_integrantes`, `usuarios_idUser`, `comentario_idcomentario`) VALUES ('1', 'Tlhanga moz', '2018-05-15', '1', '1', '1'), ('2', 'Virtualizacao', '2018-05-09', '5', '1', '2');
-        $sql = "INSERT INTO usuarios (nome,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
+        $sql = "INSERT INTO usuarios (nome_do_grupo,data_criacao,nr_integrantes,usuarios_idUser,comentario_idcomentario) values (?,?,?,?,?)";
         $controle = new controle();
         $con = $controle->salvar($array, $sql);
         return $con;
@@ -50,10 +50,11 @@ class c_grupo_chat
         $nome_do_grupo = addslashes($_REQUEST['nome_do_grupo']);
         $data_criacao = addslashes($_REQUEST['data_criacao']);
         $nr_integrantes = addslashes($_REQUEST['nr_integrantes']);
+        $usuarios_idUser = addslashes($_REQUEST['usuarios_idUser']);
         $comentario_idcomentario = addslashes($_REQUEST['$comentario_idcomentario']);
 
         //INSERT INTO `grupo_chat` (`idgrupo_chat`, `nome_do_grupo`, `data_criacao`, `nr_integrantes`, `usuarios_idUser`, `comentario_idcomentario`) VALUES ('1', 'Tlhanga moz', '2018-05-15', '1', '1', '1'), ('2', 'Virtualizacao', '2018-05-09', '5', '1', '2');
-        $sql = "UPDATE usuarios SET nome_do_grupo=$nome_do_grupo,data_criacao=$data_criacao,nr_integrantes=$nr_integrantes,comentario_idcomentario=$comentario_idcomentario WHERE idgrupo_chat=$id";
+        $sql = "UPDATE grupo_chat SET nome_do_grupo=$nome_do_grupo,data_criacao=$data_criacao,nr_integrantes=$nr_integrantes,usuarios_idUser=$usuarios_idUser,comentario_idcomentario=$comentario_idcomentario WHERE idgrupo_chat=$id";
         $controle = new controle();
         $con = $controle->actualizar($sql);
         return $con;

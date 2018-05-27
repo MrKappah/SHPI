@@ -22,16 +22,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="c_grupo_chat.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/c_grupo_chat.php">
+      <file leaf-file-name="c_usuarios.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/c_usuarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="-274">
+              <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
               <folding>
-                <marker date="1527374232591" expanded="true" signature="875:957" placeholder="INSERT INTO usuarios... " />
-                <marker date="1527374232591" expanded="true" signature="1124:1148" placeholder="SELECT * fro... grupo_chat" />
-                <marker date="1527374232591" expanded="true" signature="1354:1390" placeholder="DELETE FROM " />
-                <marker date="1527374232591" expanded="true" signature="2153:2328" placeholder="UPDATE usuar... " />
+                <marker date="1527413188338" expanded="true" signature="753:833" placeholder="INSERT INTO usuarios... " />
+                <marker date="1527413188338" expanded="true" signature="1000:1022" placeholder="SELECT * fro... usuarios" />
+                <marker date="1527413188338" expanded="true" signature="1228:1262" placeholder="DELETE FROM " />
+                <marker date="1527413188338" expanded="true" signature="1737:1853" placeholder="UPDATE usuar... " />
               </folding>
             </state>
           </provider>
@@ -49,11 +49,15 @@
         <option value="$PROJECT_DIR$/controller/c_departamento.php" />
         <option value="$PROJECT_DIR$/controller/c_alocacao.php" />
         <option value="$PROJECT_DIR$/controller/c_comentario.php" />
-        <option value="$PROJECT_DIR$/controller/c_usuarios.php" />
         <option value="$PROJECT_DIR$/view/teste2.php" />
         <option value="$PROJECT_DIR$/controller/c_documento.php" />
         <option value="$PROJECT_DIR$/controller/c_contacto.php" />
+        <option value="$PROJECT_DIR$/controller/c_notificacoes.php" />
         <option value="$PROJECT_DIR$/controller/c_grupo_chat.php" />
+        <option value="$PROJECT_DIR$/controller/c_problema.php" />
+        <option value="$PROJECT_DIR$/controller/c_solicitacao.php" />
+        <option value="$PROJECT_DIR$/controller/c_publicacao.php" />
+        <option value="$PROJECT_DIR$/controller/c_usuarios.php" />
       </list>
     </option>
   </component>
@@ -61,6 +65,9 @@
   <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -166,6 +173,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f80cd442-f3c3-4288-ba4e-24ec7fe890bc" name="Default" comment="" />
@@ -173,12 +183,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527343894933</updated>
-      <workItem from="1527343896398" duration="5625000" />
+      <workItem from="1527343896398" duration="8173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5625000" />
+    <option name="totallyTimeSpent" value="8173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -202,6 +212,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -277,19 +295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/c_usuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-226">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding>
-            <marker date="1527373195318" expanded="true" signature="501:583" placeholder="INSERT INTO usuarios... " />
-            <marker date="1527373195318" expanded="true" signature="981:1003" placeholder="SELECT * fro... usuarios" />
-            <marker date="1527373195318" expanded="true" signature="1209:1243" placeholder="DELETE FROM " />
-            <marker date="1527373195318" expanded="true" signature="1718:1834" placeholder="UPDATE usuar... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/c_contacto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -318,13 +323,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/c_grupo_chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="391">
+          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
           <folding>
-            <marker date="1527374232591" expanded="true" signature="875:957" placeholder="INSERT INTO usuarios... " />
-            <marker date="1527374232591" expanded="true" signature="1124:1148" placeholder="SELECT * fro... grupo_chat" />
-            <marker date="1527374232591" expanded="true" signature="1354:1390" placeholder="DELETE FROM " />
-            <marker date="1527374232591" expanded="true" signature="2153:2328" placeholder="UPDATE usuar... " />
+            <marker date="1527411650914" expanded="true" signature="875:998" placeholder="INSERT INTO usuarios... " />
+            <marker date="1527411650914" expanded="true" signature="1165:1189" placeholder="SELECT * fro... grupo_chat" />
+            <marker date="1527411650914" expanded="true" signature="1395:1431" placeholder="DELETE FROM " />
+            <marker date="1527411650914" expanded="true" signature="2263:2473" placeholder="UPDATE usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/c_notificacoes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1527411632787" expanded="true" signature="1242:1438" placeholder="INSERT INTO notificacoes... " />
+            <marker date="1527411632787" expanded="true" signature="1605:1631" placeholder="SELECT * fro... notificacoes" />
+            <marker date="1527411632787" expanded="true" signature="1837:1875" placeholder="DELETE FROM " />
+            <marker date="1527411632787" expanded="true" signature="2659:3005" placeholder="UPDATE usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/c_problema.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="55" column="155" selection-start-line="55" selection-start-column="155" selection-end-line="55" selection-end-column="155" />
+          <folding>
+            <marker date="1527412130184" expanded="true" signature="867:976" placeholder="INSERT INTO problema... " />
+            <marker date="1527412130184" expanded="true" signature="1143:1165" placeholder="SELECT * fro... problema" />
+            <marker date="1527412130184" expanded="true" signature="1380:1419" placeholder="DELETE FROM " />
+            <marker date="1527412130184" expanded="true" signature="1957:2131" placeholder="UPDATE probl... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/c_solicitacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="146" selection-start-line="52" selection-start-column="146" selection-end-line="52" selection-end-column="146" />
+          <folding>
+            <marker date="1527413032524" expanded="true" signature="782:876" placeholder="INSERT INTO solicitacao... " />
+            <marker date="1527413032524" expanded="true" signature="1042:1067" placeholder="SELECT * fro... usuarios" />
+            <marker date="1527413032524" expanded="true" signature="1273:1317" placeholder="DELETE FROM " />
+            <marker date="1527413032524" expanded="true" signature="1796:1947" placeholder="UPDATE usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/c_publicacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <marker date="1527413093760" expanded="true" signature="703:785" placeholder="INSERT INTO usuarios... " />
+            <marker date="1527413093760" expanded="true" signature="953:977" placeholder="SELECT * fro... usuarios" />
+            <marker date="1527413093760" expanded="true" signature="1183:1225" placeholder="DELETE FROM " />
+            <marker date="1527413093760" expanded="true" signature="1681:1808" placeholder="UPDATE usuar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/c_usuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
+          <folding>
+            <marker date="1527413188338" expanded="true" signature="753:833" placeholder="INSERT INTO usuarios... " />
+            <marker date="1527413188338" expanded="true" signature="1000:1022" placeholder="SELECT * fro... usuarios" />
+            <marker date="1527413188338" expanded="true" signature="1228:1262" placeholder="DELETE FROM " />
+            <marker date="1527413188338" expanded="true" signature="1737:1853" placeholder="UPDATE usuar... " />
           </folding>
         </state>
       </provider>

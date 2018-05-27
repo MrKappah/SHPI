@@ -7,26 +7,28 @@ include_once "../model/publicacao.php";
 class c_publicacao
 {
 
+
     public function salvar()
     {
 
-        $nome = addcslashes($_REQUEST['nome']);
-        $email = addcslashes($_REQUEST['email']);
-        $login = addcslashes($_REQUEST['login']);
-        $senha = addcslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addcslashes($_REQUEST['nivel_acesso_id']);
+        $usuarios_idUser = addcslashes($_REQUEST['usuarios_idUser']);
+        $texto = addcslashes($_REQUEST['texto']);
+        $data_pub = addcslashes($_REQUEST['data_pub']);
+        $cabecalho = addcslashes($_REQUEST['cabecalho']);
 
-        $array = array($nome, $email, $login, $senha, $nivel_acesso_id);
+        //INSERT INTO `publicacao` (`idpublicacao`, `usuarios_idUser`, `texto`, `data_pub`, `cabecalho`) VALUES ('1', '2', 'Sejam bem vindos ao grupo chat', '2018-05-09', NULL), ('2', '3', 'O meu muito obrigado', '2018-05-01', NULL);
+        $array = array($usuarios_idUser, $texto, $data_pub, $cabecalho);
+        $sql = "INSERT INTO publicacao (usuarios_idUser,texto,data_pub,cabecalho) values (?,?,?,?)";
+        $controle = new controle();
+        $con = $controle->salvar($array, $sql);
+        return $con;
 
-        $sql = "INSERT INTO usuarios (nome,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
-
-   
 
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from usuarios";
+        $sql = "SELECT * from publicacao";
         $controle = new controle();
         $con = $controle->buscar($sql);
         return $con;
@@ -37,7 +39,7 @@ class c_publicacao
     {
         $id = addcslashes($_REQUEST['id']);
 
-        $sql = "DELETE FROM usuarios where idUser=$id";
+        $sql = "DELETE FROM publicacao where idpublicacao=$id";
         $controle = new controle();
         $con = $controle->eliminar($sql);
         return $con;
@@ -45,19 +47,19 @@ class c_publicacao
 
     public function actualizar()
     {
-        $id = addcslashes($_REQUEST['id']);
-        $nome = addslashes($_REQUEST['nome']);
-        $email = addslashes($_REQUEST['email']);
-        $login = addslashes($_REQUEST['login']);
-        $senha = addslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addslashes($_REQUEST['nivel_acesso_id']);
+        $id = addcslashes($_REQUEST['idpublicacao']);
+        $usuarios_idUser = addcslashes($_REQUEST['usuarios_idUser']);
+        $texto = addcslashes($_REQUEST['texto']);
+        $data_pub = addcslashes($_REQUEST['data_pub']);
+        $cabecalho = addcslashes($_REQUEST['cabecalho']);
 
-        $sql = "UPDATE usuarios SET nome=$nome,email=$email,login=$login,senha=$senha,nivel_acesso_id=$nivel_acesso_id WHERE idUser=$id";
+        $sql = "UPDATE publicacao SET usuarios_idUser=$usuarios_idUser,texto=$texto,data_pub=$data_pub,cabecalho=$cabecalho WHERE idpublicacao=$id";
         $controle = new controle();
         $con = $controle->actualizar($sql);
         return $con;
     }
 }
+
 
 
 ?>

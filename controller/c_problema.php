@@ -10,23 +10,24 @@ class c_problema
     public function salvar()
     {
 
-        $nome = addcslashes($_REQUEST['nome']);
-        $email = addcslashes($_REQUEST['email']);
-        $login = addcslashes($_REQUEST['login']);
-        $senha = addcslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addcslashes($_REQUEST['nivel_acesso_id']);
+        $hora = addcslashes($_REQUEST['hora']);
+        $data_prob = addcslashes($_REQUEST['data_prob']);
+        $solicitacao_idsolicitacao = addcslashes($_REQUEST['solicitacao_idsolicitacao']);
+        $status = addcslashes($_REQUEST['status']);
+        $Alocacao_idAlocacao = addcslashes($_REQUEST['Alocacao_idAlocacao']);
+        $array = array($hora, $data_prob, $solicitacao_idsolicitacao, $status, $Alocacao_idAlocacao);
 
-        $array = array($nome, $email, $login, $senha, $nivel_acesso_id);
-
-        $sql = "INSERT INTO usuarios (nome,email,login,senha,nivel_acesso_id) values (?,?,?,?,?,?)";
-
-        //(`idUser`, `nome`, `email`, `login`, `senha`, `nivel_acesso_id`, `created`, `modified`, `usuarios_idUser`, `departamento_iddepartamento`) VALUES ('3', 'fg', 'dfg', 'dfg', 'dfg', '1', '2018-05-15', '2018-05-22', '1', '1');
+  //INSERT INTO `problema` (`idresolucao`, `hora`, `data_prob`, `solicitacao_idsolicitacao`, `status`, `Alocacao_idAlocacao`) VALUES ('1', '2018-05-10 00:00:00.000000', '2018-05-02', '1', 'pendente', '1'), ('2', '2018-05-01 00:00:00.000000', '2018-05-16', '2', 'resolvido', '2');
+        $sql = "INSERT INTO problema (hora,data_prob,solicitacao_idsolicitacao,status,Alocacao_idAlocacao) values (?,?,?,?,?)";
+        $controle = new controle();
+        $con = $controle->salvar($array, $sql);
+        return $con;
 
     }
 
     public function buscar()
     {
-        $sql = "SELECT * from usuarios";
+        $sql = "SELECT * from problema";
         $controle = new controle();
         $con = $controle->buscar($sql);
         return $con;
@@ -35,9 +36,9 @@ class c_problema
 
     public function eliminar()
     {
-        $id = addcslashes($_REQUEST['id']);
+        $id = addcslashes($_REQUEST['idresolucao']);
 
-        $sql = "DELETE FROM usuarios where idUser=$id";
+        $sql = "DELETE FROM problema where idresolucao=$id";
         $controle = new controle();
         $con = $controle->eliminar($sql);
         return $con;
@@ -46,13 +47,13 @@ class c_problema
     public function actualizar()
     {
         $id = addcslashes($_REQUEST['id']);
-        $nome = addslashes($_REQUEST['nome']);
-        $email = addslashes($_REQUEST['email']);
-        $login = addslashes($_REQUEST['login']);
-        $senha = addslashes($_REQUEST['senha']);
-        $nivel_acesso_id = addslashes($_REQUEST['nivel_acesso_id']);
+        $hora = addcslashes($_REQUEST['hora']);
+        $data_prob = addcslashes($_REQUEST['data_prob']);
+        $solicitacao_idsolicitacao = addcslashes($_REQUEST['solicitacao_idsolicitacao']);
+        $status = addcslashes($_REQUEST['status']);
+        $Alocacao_idAlocacao = addcslashes($_REQUEST['Alocacao_idAlocacao']);
 
-        $sql = "UPDATE usuarios SET nome=$nome,email=$email,login=$login,senha=$senha,nivel_acesso_id=$nivel_acesso_id WHERE idUser=$id";
+        $sql = "UPDATE problema SET hora=$hora,data_prob=$data_prob,solicitacao_idsolicitacao=$solicitacao_idsolicitacao,status=$status,Alocacao_idAlocacao=$Alocacao_idAlocacao WHERE idUser=$id";
         $controle = new controle();
         $con = $controle->actualizar($sql);
         return $con;
